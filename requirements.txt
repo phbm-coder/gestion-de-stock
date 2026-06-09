@@ -1,0 +1,13 @@
+Django==4.2.0
+DjangoRestFramework==3.14.0
+django-cors-headers==4.0.0
+django-filter==23.1
+celery==5.2.7
+redis==4.5.4
+psycopg2-binary==2.9.6
+scikit-learn==1.2.2
+pandas==2.0.0
+numpy==1.24.3
+python-dotenv==1.0.0
+requests==2.31.0
+Pillow==10.0.0

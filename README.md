@@ -1,151 +1,74 @@
-# 🏪 Système de Gestion de Stocks pour Magasin
+# Backend - Gestion de Stocks (Python/Django)
 
-Un projet complet de gestion de stocks intégrant **8 technologies différentes** pour une couverture maximale de tous les cas d'usage.
+## 🐍 API Avancée avec Django & Machine Learning
 
-## 📱 Branches Technologiques
+Backend Python avec microservices, prédictions ML et analytics avancées.
 
-### 1. **dev/frontend-javascript** 
-   - Frontend avec React/Vue.js
-   - Interface web responsive
-   - Dashboard interactif
-
-### 2. **dev/mobile-java**
-   - Application mobile Android
-   - Gestion des stocks en temps réel
-   - Synchronisation offline
-
-### 3. **dev/desktop-csharp**
-   - Application desktop Windows (.NET)
-   - Interface riche et performante
-   - Intégration systèmes de caisse
-
-### 4. **dev/web-php**
-   - Backend PHP avec Laravel
-   - API RESTful
-   - Gestion des utilisateurs
-
-### 5. **dev/backend-python**
-   - Backend Python avec Django/Flask
-   - Microservices
-   - Machine Learning pour prévisions
-
-### 6. **dev/backend-ruby**
-   - Backend Ruby on Rails
-   - Rapidité de développement
-   - Gestion avancée des relations
-
-### 7. **dev/system-go**
-   - Services haute performance en Go
-   - Système de notifications
-   - Synchronisation temps réel
-
-### 8. **dev/performance-rust**
-   - Optimisations critiques en Rust
-   - Gestion mémoire sûre
-   - Calculs intensifs
-
-## 🎯 Fonctionnalités Principales
-
-### Gestion des Produits
-- ✅ Ajout/Suppression/Modification de produits
-- ✅ Catégories et sous-catégories
-- ✅ Codes-barres et références
-- ✅ Images et descriptions
-
-### Suivi des Stocks
-- ✅ Niveaux de stock en temps réel
-- ✅ Mouvements d'entrée/sortie
-- ✅ Historique complet
-- ✅ Audits et traçabilité
-
-### Alertes & Notifications
-- ✅ Alertes stock faible
-- ✅ Notifications en temps réel
-- ✅ Rappels d'approvisionnement
-- ✅ Alertes anomalies
-
-### Rapports & Analytics
-- ✅ Rapports de stock
-- ✅ Statistiques de ventes
-- ✅ Prévisions de demande
-- ✅ Analyse de rotation
-
-### Gestion des Utilisateurs
-- ✅ Authentification sécurisée
-- ✅ Rôles et permissions
-- ✅ Audit des actions
-- ✅ Multi-magasins
-
-## 🛠️ Installation & Configuration
-
-Voir les README spécifiques dans chaque branche pour les instructions de configuration.
-
-## 📊 Architecture
-
-```
-┌─────────────────────────────────────────┐
-│        Frontend (JavaScript)             │
-│  React/Vue - Dashboard Interactive       │
-└────────────────┬────────────────────────┘
-                 │
-    ┌────────────┼────────────┐
-    │            │            │
-┌───▼──┐   ┌────▼───┐   ┌────▼────┐
-│ PHP  │   │ Python  │   │   Ruby   │
-│API   │   │API      │   │ API      │
-└──┬───┘   └─┬──┬─┬──┘   └──┬──────┘
-   │         │  │ │         │
-   └─────────┼──┼─┼─────────┘
-             │  │ │
-        ┌────▼──▼─▼────┐
-        │   Go Services │
-        │ Notifications │
-        └────┬──────┬───┘
-             │      │
-        ┌────▼──┐ ┌─▼──────┐
-        │Mobile │ │Desktop  │
-        │Java   │ │C#/.NET  │
-        └───────┘ └─────────┘
-```
-
-## 🚀 Démarrage Rapide
+## 🚀 Installation
 
 ```bash
-# Cloner le dépôt
 git clone https://github.com/phbm-coder/gestion-de-stock.git
 cd gestion-de-stock
-
-# Vérifier les branches disponibles
-git branch -a
-
-# Basculer vers une technologie spécifique
-git checkout dev/frontend-javascript
-# ou
 git checkout dev/backend-python
-# etc...
+
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py runserver
 ```
 
-## 📚 Documentation
+## 📁 Structure
 
-- [Architecture Globale](./docs/ARCHITECTURE.md)
-- [Guide d'Installation](./docs/INSTALLATION.md)
-- [API Documentation](./docs/API.md)
-- [Contribution Guidelines](./CONTRIBUTING.md)
+```
+apps/
+├── stock/
+│   ├── models.py
+│   ├── views.py
+│   └── serializers.py
+├── analytics/
+│   ├── ml_predictor.py
+│   └── reports.py
+config/
+├── settings.py
+├── urls.py
+└── wsgi.py
+```
 
-## 👨‍💻 Contribution
+## 🎯 Fonctionnalités
 
-Les contributions sont bienvenues ! Merci de consulter [CONTRIBUTING.md](./CONTRIBUTING.md) pour les détails.
+- ✅ API RESTful complète
+- ✅ Machine Learning pour prédictions
+- ✅ Celery pour tâches asynchrones
+- ✅ Cache Redis
+- ✅ Analytics avancées
+- ✅ Rapports détaillés
 
-## 📝 Licence
+## 🛠️ Technologies
 
-MIT License - Voir [LICENSE](./LICENSE) pour plus de détails.
+- Python 3.10+
+- Django 4.2
+- Django REST Framework
+- Scikit-learn
+- Pandas
+- Celery
+- Redis
+- PostgreSQL
 
-## 📧 Contact
+## 📦 Commandes
 
-**Auteur** : phbm-coder
-**Email** : phbm-coder@github.com
+```bash
+# Migrations
+python manage.py makemigrations
+python manage.py migrate
 
----
+# Tests
+python manage.py test
 
-**Dernier mise à jour** : Juin 2026
-**Version** : 1.0.0
+# Serveur
+python manage.py runserver
+
+# Celery worker
+celery -A config worker -l info
+```
